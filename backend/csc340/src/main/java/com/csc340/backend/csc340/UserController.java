@@ -10,6 +10,7 @@ public class UserController {
 	@MessageMapping("/user")
 	@SendTo("/topic/user")
 	public User getUser(User user) {
+		System.out.println("Someone hit the /topic/user endpoint");
 		return user;
 	}
 }
