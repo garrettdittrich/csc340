@@ -1,5 +1,6 @@
 package com.example.myapplicationtest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,45 +17,37 @@ import android.widget.TextView;
 import com.stomped.stomped.client.StompedClient;
 import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
+import ua.naiksoftware.stomp.client.StompClient;
 
 public class MainActivity extends AppCompatActivity {
-    public final StompedClient client = new StompedClient.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
+    public enum ConnectionProvider {
+        OKHTTP, JWS
+    }
+    private StompClient mStompClient;
 
-    public Button btn;
-    public void subscribe(){
-
-
-
-
-        client.subscribe("/topic/user", new StompedListener() {
-            EditText editText = (EditText) findViewById(R.id.editText);
-            TextView textView = (TextView) findViewById(R.id.textView);
-            @Override
-            public void onNotify(final StompedFrame frame) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        textView.setText(frame.getStompedBody());
-                        Log.d("MainActivity", "subscribed");
-                    }
-                });
-            }
-        });
+    private EditText username;
+    private EditText password;
+    public Button loginbutton;
 
 
+
+    private void validate(String user, String pass){
+        Log.d("MainActivity", "username : " + user + " password: " + pass);
+        if (user.equals("admin") && pass.equals("password")  ) {
+            Log.d("MainActivity", "The username and password are correct");
+            Intent intent = new Intent(MainActivity.this, profile.class);
+            startActivity(intent);
+        }
     }
 
-    public void sendData(){
-        EditText editText = (EditText) findViewById(R.id.editText);
-        TextView textView = (TextView) findViewById(R.id.textView);
-        client.send("/app/user", "{\"username\":\"" + editText.getText().toString() + "\" , "
-                + "\"password\": \"abc123\", " +
-                "\"gps\": 100 }");
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        username = (EditText) findViewById(R.id.eusername);
+        password = (EditText) findViewById(R.id.password);
+        loginbutton = (Button) findViewById(R.id.logbutt);
+        super.onCreate(savedInstanceState);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -68,15 +61,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // testing stomp client
-        btn = (Button) findViewById(R.id.thatButton);
-        subscribe();
-        btn.setOnClickListener(new View.OnClickListener() {
+        //btn = (Button) findViewById(R.id.thatButton);
+        //subscribe();
+        loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendData();
+                validate(username.getText().toString(), password.getText().toString());
                 Log.d("MainActivity", "The Button has been clicked");
             }
         });
+
+
 
     }
 
