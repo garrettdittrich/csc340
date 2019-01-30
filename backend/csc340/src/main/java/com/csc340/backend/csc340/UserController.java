@@ -9,7 +9,7 @@ public class UserController {
 	
 	@MessageMapping("/user")
 	@SendTo("/topic/user")
-	public User getUser(User user) {
+	public GpsUser getUser(GpsUser user) {
 		System.out.println("Someone hit the /topic/user endpoint");
 		return user;
 	}

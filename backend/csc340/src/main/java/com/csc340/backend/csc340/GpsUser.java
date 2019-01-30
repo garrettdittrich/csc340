@@ -1,6 +1,6 @@
 package com.csc340.backend.csc340;
 
-public class User {
+public class GpsUser {
 	private String username;
 	private String password;
 	private String gps;
