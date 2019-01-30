@@ -51,7 +51,7 @@ public class profile extends AppCompatActivity {
         sendbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                sendData("button hit");
             }
         });
     }
