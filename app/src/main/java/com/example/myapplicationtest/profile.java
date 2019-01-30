@@ -8,12 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.myapplicationtest.socket.StompedClientAddHeaders;
 import com.stomped.stomped.client.StompedClient;
 import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
 
 public class profile extends AppCompatActivity {
-    public final StompedClient client = new StompedClient.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
+    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
     public void subscribe(){
 
         client.subscribe("/topic/user", new StompedListener() {
@@ -36,7 +37,7 @@ public class profile extends AppCompatActivity {
     public void sendData(String input){
         EditText editText = (EditText) findViewById(R.id.editText);
         TextView textView = (TextView) findViewById(R.id.testdata);
-        client.send("/app/user", "{\"username\":\"" + input + "\" , "
+        client.sendWithHeaders("/app/user", "{\"username\":\"" + input + "\" , "
                 + "\"password\": \"abc123\", " +
                 "\"gps\": 100 }");
     }
