@@ -26,7 +26,7 @@ public class profile extends AppCompatActivity {
                     @Override
                     public void run() {
                         textView.setText(frame.getStompedBody());
-                        Log.d("MainActivity", "subscribed");
+                        Log.d("LoginPage", "subscribed");
                     }
                 });
             }

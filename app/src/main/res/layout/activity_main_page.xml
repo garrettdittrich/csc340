@@ -4,6 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:visibility="visible"
     tools:context=".MainPage">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="411dp"
+        android:layout_height="726dp"
+        android:alpha="0.5"
+        android:backgroundTintMode="src_atop"
+        android:scaleType="fitStart"
+        app:layout_constraintCircle="@mipmap/FitBet_launcher_round"
+        app:layout_constraintCircleAngle="@android:integer/config_mediumAnimTime"
+        app:layout_constraintCircleRadius="@android:dimen/app_icon_size"
+        app:srcCompat="@mipmap/FitBet_launchercircle3_round"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <Button
+        android:id="@+id/Find Friend"
+        android:layout_width="200dp"
+        android:layout_height="66dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:text="Find Friend"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="226dp" />
+
+    <Button
+        android:id="@+id/Join Friend"
+        android:layout_width="201dp"
+        android:layout_height="68dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:text="Join Friend"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="356dp" />
 
 </android.support.constraint.ConstraintLayout>

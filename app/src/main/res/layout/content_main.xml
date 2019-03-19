@@ -4,16 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:backgroundTint="@color/colorAccent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".LoginPage"
     tools:showIn="@layout/activity_main">
 
     <EditText
         android:id="@+id/editText"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:height="@android:dimen/notification_large_icon_height"
+        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:backgroundTint="@color/colorAccent"
         android:gravity="center"
-        android:hint="This is the login screen to out sick app" />
+        android:inputType="textLongMessage"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textSize="36sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/eusername"
@@ -23,8 +36,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
         android:ems="10"
-        android:hint="username"
+        android:hint="              username"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +55,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:ems="10"
-        android:hint="password"
+        android:hint="               password"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,19 +66,59 @@
         app:layout_constraintVertical_bias="0.11" />
 
     <Button
-        android:id="@+id/logbutt"
+        android:id="@+id/createAbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="login"
+        android:background="@color/colorPrimaryDark"
+        android:text="Create Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.254" />
+
+    <Button
+        android:id="@+id/loginButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_green_light"
+        android:text="         LogIn           "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.254" />
+
+    <Button
+        android:id="@+id/forgetP"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="197dp"
+        android:layout_height="39dp"
+        android:text="Forgot Password"
+        android:textColor="@color/colorPrimary"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="510dp" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="249dp"
+        android:layout_height="139dp"
+        android:background="@color/colorAccent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/FitBet_launchercircle3_round"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="46dp" />
 
 </android.support.constraint.ConstraintLayout>

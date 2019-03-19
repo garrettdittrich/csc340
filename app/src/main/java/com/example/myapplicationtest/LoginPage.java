@@ -8,18 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.util.Base64;
-import com.stomped.stomped.client.StompedClient;
-import com.stomped.stomped.component.StompedFrame;
-import com.stomped.stomped.listener.StompedListener;
+
 import ua.naiksoftware.stomp.client.StompClient;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginPage extends AppCompatActivity {
     public enum ConnectionProvider {
         OKHTTP, JWS
     }
@@ -32,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void validate(String user, String pass){
-        Log.d("MainActivity", "username : " + user + " password: " + pass);
+        Log.d("LoginPage", "username : " + user + " password: " + pass);
         if (user.equals("admin") && pass.equals("password")  ) {
-            Log.d("MainActivity", "The username and password are correct");
-            Intent intent = new Intent(MainActivity.this, profile.class);
+            Log.d("LoginPage", "The username and password are correct");
+            Intent intent = new Intent(LoginPage.this, profile.class);
             startActivity(intent);
         }
     }
@@ -67,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validate(username.getText().toString(), password.getText().toString());
-                Log.d("MainActivity", "The Button has been clicked");
+                Log.d("LoginPage", "The Button has been clicked");
             }
         });
 
