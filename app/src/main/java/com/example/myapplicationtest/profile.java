@@ -37,8 +37,8 @@ public class profile extends AppCompatActivity {
     public void sendData(String input){
         EditText editText = (EditText) findViewById(R.id.editText);
         TextView textView = (TextView) findViewById(R.id.testdata);
-        client.sendWithHeaders("/app/user", "{\"username\":\"" + input + "\" , "
-                + "\"password\": \"abc123\", " +
+        client.sendWithHeaders("/app/user", "{\"username\":\"" + "dingdong" + "\" , "
+                + "\"password\": \"whosthere\", " +
                 "\"gps\": 100 }");
     }
     @Override
