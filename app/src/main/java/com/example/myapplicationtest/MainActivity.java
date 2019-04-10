@@ -32,25 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import ua.naiksoftware.stomp.client.StompClient;
 
 public class MainActivity extends AppCompatActivity {
-    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
-    public void subscribe(){
 
-        client.subscribe("/topic/user", new StompedListener() {
-            @Override
-            public void onNotify(final StompedFrame frame) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //textView.setText(frame.getStompedBody());
-                        Log.d("MainActivity", frame.getStompedBody());
-                        goToRequestScreen();
-                    }
-                });
-            }
-        });
-
-
-    }
 
 
     public enum ConnectionProvider {
@@ -108,9 +90,10 @@ public class MainActivity extends AppCompatActivity {
                 AsyncTask<Void, Void, Boolean> execute = new UserLoginTask(username.getText().toString(),
                         password.getText().toString());
                 execute.execute();
-
-                AsyncTask<Void, Void, Boolean> bullshit = new FakeLoginTask();
-                bullshit.execute();
+                Intent intent = new Intent(MainActivity.this, ContractIntentService.class);
+                startService(intent);
+//                AsyncTask<Void, Void, Boolean> bullshit = new FakeLoginTask();
+//                bullshit.execute();
                 //validate(username.getText().toString(), password.getText().toString());
                 Log.d("MainActivity", "The Button has been clicked");
             }
@@ -119,24 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public class FakeLoginTask extends AsyncTask<Void, Void, Boolean> {
 
-        FakeLoginTask(){
-
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... voids) {
-
-            try {
-                subscribe();
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
-            return false;
-        }
-    }
 
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
         private final String username;
@@ -156,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         protected Boolean doInBackground(Void... voids) {
-            Retrofit.Builder builder = new Retrofit.Builder().baseUrl("http://192.168.1.10:8080/").
+            Retrofit.Builder builder = new Retrofit.Builder().baseUrl("http://142.93.63.201:8080/").
                     addConverterFactory(GsonConverterFactory.create());
 
             Retrofit retrofit = builder.build();
