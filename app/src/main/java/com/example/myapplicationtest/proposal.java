@@ -19,6 +19,8 @@ import java.util.Calendar;
 
 public class proposal extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     protected FitBetApplicationClass app;
+    public Contract contract;
+    public Calendar cal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +28,13 @@ public class proposal extends AppCompatActivity implements DatePickerDialog.OnDa
         Intent intent = new Intent(proposal.this, ContractIntentService.class);
         app = (FitBetApplicationClass) getApplication();
         Button button = (Button) findViewById(R.id.datepick);
-
+        Button submitButton = (Button) findViewById(R.id.submit);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                contract.setScheduleDate(cal);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,12 +47,11 @@ public class proposal extends AppCompatActivity implements DatePickerDialog.OnDa
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, year);
-        c.set(Calendar.MONTH, month);
-        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-
+        cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month);
+        cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(cal.getTime());
         TextView textView = (TextView) findViewById(R.id.datechosen);
         textView.setText(currentDateString);
     }
