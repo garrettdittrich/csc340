@@ -15,25 +15,7 @@ import com.stomped.stomped.listener.StompedListener;
 
 public class profile extends AppCompatActivity {
     public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
-    public void subscribe(){
 
-        client.subscribe("/topic/user", new StompedListener() {
-            EditText editText = (EditText) findViewById(R.id.editText);
-            TextView textView = (TextView) findViewById(R.id.testdata);
-            @Override
-            public void onNotify(final StompedFrame frame) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        textView.setText(frame.getStompedBody());
-                        Log.d("MainActivity", "subscribed");
-                    }
-                });
-            }
-        });
-
-
-    }
     public void sendData(String input){
         EditText editText = (EditText) findViewById(R.id.editText);
         TextView textView = (TextView) findViewById(R.id.testdata);
@@ -45,8 +27,8 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        subscribe();
-        sendData("ggggggggggggggggggggg");
+        //subscribe();
+        //sendData("ggggggggggggggggggggg");
 
         Button sendbutton = (Button) findViewById(R.id.sendbutton);
         sendbutton.setOnClickListener(new View.OnClickListener() {

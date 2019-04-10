@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.myapplicationtest.com.example.myapplicationtest.service.ApiAuthenticationClient;
 import com.example.myapplicationtest.com.example.myapplicationtest.service.LoginService;
 import com.example.myapplicationtest.com.example.myapplicationtest.service.SuccessObject;
+import com.example.myapplicationtest.socket.StompedClientAddHeaders;
 import com.stomped.stomped.client.StompedClient;
 import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
@@ -31,6 +32,27 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import ua.naiksoftware.stomp.client.StompClient;
 
 public class MainActivity extends AppCompatActivity {
+    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
+    public void subscribe(){
+
+        client.subscribe("/topic/user", new StompedListener() {
+            @Override
+            public void onNotify(final StompedFrame frame) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //textView.setText(frame.getStompedBody());
+                        Log.d("MainActivity", frame.getStompedBody());
+                        goToRequestScreen();
+                    }
+                });
+            }
+        });
+
+
+    }
+
+
     public enum ConnectionProvider {
         OKHTTP, JWS
     }
@@ -55,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, profile.class);
         startActivity(intent);
     }
+    public void goToRequestScreen(){
+        Log.d("MainActivity", "Going to Request Screen");
+        Intent intent = new Intent(MainActivity.this, Requests.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
@@ -65,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.eusername);
         password = (EditText) findViewById(R.id.password);
-        loginbutton = (Button) findViewById(R.id.logbutt);
+        loginbutton = (Button) findViewById(R.id.loginButt);
         super.onCreate(savedInstanceState);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -81,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
                 AsyncTask<Void, Void, Boolean> execute = new UserLoginTask(username.getText().toString(),
                         password.getText().toString());
                 execute.execute();
+
+                AsyncTask<Void, Void, Boolean> bullshit = new FakeLoginTask();
+                bullshit.execute();
                 //validate(username.getText().toString(), password.getText().toString());
                 Log.d("MainActivity", "The Button has been clicked");
             }
@@ -89,6 +119,25 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public class FakeLoginTask extends AsyncTask<Void, Void, Boolean> {
+
+        FakeLoginTask(){
+
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+
+            try {
+                subscribe();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+            return false;
+        }
+    }
+
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
         private final String username;
         private final String password;
