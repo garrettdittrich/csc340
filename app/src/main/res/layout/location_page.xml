@@ -80,27 +80,22 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@color/common_google_signin_btn_text_dark_default" />
 
-        <TextView
-            android:id="@+id/contract"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="118dp"
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="367dp"
+            android:layout_height="511dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="137dp"
-            android:layout_marginEnd="119dp"
-            android:layout_marginBottom="545dp"
-            android:fontFamily="monospace"
-            android:text="TextView"
-            android:textAppearance="@android:style/TextAppearance.Large"
-            android:textSize="36sp"
-            android:typeface="monospace"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="83dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Contract" />
+            app:layout_constraintTop_toTopOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
