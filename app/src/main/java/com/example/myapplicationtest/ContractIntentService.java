@@ -9,7 +9,7 @@ import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
 
 public class ContractIntentService extends IntentService {
-    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.43.117:8080/livescore-websocket");
+    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://142.93.63.201:8080/livescore-websocket");
     public int counter;
     private static final String TAG = "com.example.myapplicationtest";
     public ContractIntentService(){
