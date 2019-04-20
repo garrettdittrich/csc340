@@ -31,15 +31,6 @@ public class profile extends AppCompatActivity {
         //subscribe();
         //sendData("ggggggggggggggggggggg");
 
-        Button sendbutton = (Button) findViewById(R.id.sendbutton);
-        sendbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(profile.this, proposal.class);
-                startActivity(intent);
-                Log.d("TT", "OKKKKKKAYYYY");
-            }
-        });
 
         Button buttonRequest = (Button) findViewById(R.id.button3);
         buttonRequest.setOnClickListener(new View.OnClickListener() {
