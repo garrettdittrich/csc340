@@ -4,4 +4,5 @@
     <string name="title_activity_profle_page">Profle_page</string>
     <string name="title_activity_requests">Requests</string>
     <string name="title_activity_proposal">proposal</string>
+    <string name="title_activity_search">search</string>
 </resources>

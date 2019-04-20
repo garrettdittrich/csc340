@@ -50,5 +50,15 @@ public class profile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button buttonSearch = (Button) findViewById(R.id.button2);
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, search.class);
+                Log.d("TT", "yeeeet");
+                startActivity(intent);
+            }
+        });
     }
 }
