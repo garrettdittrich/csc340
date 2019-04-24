@@ -1,10 +1,18 @@
 package com.example.myapplicationtest;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -32,9 +40,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import ua.naiksoftware.stomp.client.StompClient;
 
 public class MainActivity extends AppCompatActivity {
+    private LocationManager locationManager;
+    private LocationWrapper locationListener;
+    private Intent gpsService;
 
-
-
+    private void initializeGps() {
+        gpsService = new Intent(this, GpsService.class);
+        startService(gpsService);
+    }
     public enum ConnectionProvider {
         OKHTTP, JWS
     }
@@ -69,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //baseUrl = "http://192.168.1.10:8080/rest/login";
 
-
+        initializeGps();
 
 
         username = (EditText) findViewById(R.id.eusername);
@@ -79,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         // testing stomp client
         //btn = (Button) findViewById(R.id.thatButton);
@@ -91,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
                         password.getText().toString());
                 execute.execute();
                 Intent intent = new Intent(MainActivity.this, ContractIntentService.class);
+                //intent.put
                 startService(intent);
-//                AsyncTask<Void, Void, Boolean> bullshit = new FakeLoginTask();
-//                bullshit.execute();
-                //validate(username.getText().toString(), password.getText().toString());
+
+
                 Log.d("MainActivity", "The Button has been clicked");
             }
         });
