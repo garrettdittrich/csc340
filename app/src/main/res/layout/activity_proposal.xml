@@ -73,104 +73,116 @@
             android:layout_width="390dp"
             android:layout_height="535dp"
             android:layout_marginStart="13dp"
-            android:layout_marginTop="125dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="71dp"
+            android:layout_marginBottom="72dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@color/common_google_signin_btn_text_dark_default" />
 
-        <LinearLayout
-            android:layout_width="377dp"
-            android:layout_height="519dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="125dp"
-            android:layout_marginEnd="22dp"
-            android:layout_marginBottom="87dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="58dp"
+            android:layout_height="26dp"
+            android:text="User id"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="153dp" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="107dp"
-                android:layout_height="31dp"
-                android:text="User id" />
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="380dp"
+            android:layout_height="31dp"
+            android:background="@android:color/background_dark"
+            android:backgroundTint="@color/brightBackgroundColor"
+            android:ems="10"
+            android:inputType="number"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="179dp" />
 
-            <EditText
-                android:id="@+id/editText5"
-                android:layout_width="166dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="70dp"
+            android:layout_height="21dp"
+            android:text="Location"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="220dp" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Location" />
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="380dp"
+            android:layout_height="31dp"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="241dp" />
 
-            <EditText
-                android:id="@+id/editText6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPostalAddress" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="46dp"
+            android:layout_height="25dp"
+            android:text="Time"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="285dp" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Time" />
+        <EditText
+            android:id="@+id/editText7"
+            android:layout_width="382dp"
+            android:layout_height="30dp"
+            android:ems="10"
+            android:inputType="time"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="310dp" />
 
-            <EditText
-                android:id="@+id/editText7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="time" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="382dp"
+            android:layout_height="23dp"
+            android:text="Date"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="436dp" />
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Date" />
+        <TextView
+            android:id="@+id/datechosen"
+            android:layout_width="88dp"
+            android:layout_height="21dp"
+            android:text="date chosen"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="415dp" />
 
-            <Button
-                android:id="@+id/datepick"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Choose Date" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:text="Amount"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="470dp" />
 
-            <TextView
-                android:id="@+id/datechosen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="date chosen" />
+        <Button
+            android:id="@+id/datepick"
+            android:layout_width="129dp"
+            android:layout_height="47dp"
+            android:text="Choose Date"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="368dp" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Amount" />
+        <EditText
+            android:id="@+id/editText10"
+            android:layout_width="384dp"
+            android:layout_height="24dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="486dp" />
 
-            <EditText
-                android:id="@+id/editText10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-
-            <Button
-                android:id="@+id/submit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Submit" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="129dp"
+            android:layout_height="57dp"
+            android:text="Submit"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="527dp" />
 
     </android.support.constraint.ConstraintLayout>
 

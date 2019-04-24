@@ -18,7 +18,7 @@
             <!--android:layout_width="410dp"-->
             <!--android:layout_height="651dp"-->
             <!--android:alpha=".5"-->
-            <!--&lt;!&ndash;app:srcCompat="@mipmap/FitBet_launchercircle3_round"&ndash;&gt;-->
+            <!--&lt;!&ndash;app:srcCompat="@mipmap/fitbet_launchercircle3_round"&ndash;&gt;-->
             <!--tools:layout_editor_absoluteX="0dp"-->
             <!--tools:layout_editor_absoluteY="103dp" />-->
 
