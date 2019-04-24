@@ -1,11 +1,11 @@
 package com.example.myapplicationtest.com.example.myapplicationtest.gps;
 
 public class GpsUser {
-    private GpsLat lattitude;
+    private GpsLat latitude;
     private GpsLong longitude;
 
     public GpsLat getLattitude() {
-        return lattitude;
+        return latitude;
     }
 
     public GpsLong getLongitude() {
@@ -33,7 +33,7 @@ public class GpsUser {
     }
 
     public double getDifference(GpsUser user) {
-        return distance(lattitude.getLatitude(), user.getLattitude().getLatitude(), longitude.getLongitude(),
+        return distance(latitude.getLatitude(), user.getLattitude().getLatitude(), longitude.getLongitude(),
                 user.getLongitude().getLongitude(), 0.0, 0.0);
     }
 }
