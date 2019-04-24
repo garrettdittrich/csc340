@@ -73,116 +73,194 @@
             android:layout_width="390dp"
             android:layout_height="535dp"
             android:layout_marginStart="13dp"
+            android:layout_marginTop="125dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="72dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@color/common_google_signin_btn_text_dark_default" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="58dp"
             android:layout_height="26dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="153dp"
+            android:layout_marginEnd="336dp"
+            android:layout_marginBottom="552dp"
             android:text="User id"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="153dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editText5"
             android:layout_width="380dp"
             android:layout_height="31dp"
-            android:background="@android:color/background_dark"
-            android:backgroundTint="@color/brightBackgroundColor"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="179dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="521dp"
+            android:background="?attr/colorButtonNormal"
             android:ems="10"
             android:inputType="number"
+            android:style="@style/Widget.AppCompat.EditText"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="179dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="70dp"
             android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="325dp"
+            android:layout_marginBottom="490dp"
             android:text="Location"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="220dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editText6"
             android:layout_width="380dp"
             android:layout_height="31dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="241dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="459dp"
+            android:background="?attr/colorButtonNormal"
             android:ems="10"
             android:inputType="textPostalAddress"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="241dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="46dp"
             android:layout_height="25dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="285dp"
+            android:layout_marginEnd="348dp"
+            android:layout_marginBottom="421dp"
             android:text="Time"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="285dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editText7"
             android:layout_width="382dp"
             android:layout_height="30dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="310dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="391dp"
+            android:background="?android:attr/colorButtonNormal"
             android:ems="10"
             android:inputType="time"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="310dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="382dp"
             android:layout_height="23dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="436dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginBottom="272dp"
+            android:background="?android:attr/colorButtonNormal"
             android:text="Date"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="436dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/datechosen"
             android:layout_width="88dp"
             android:layout_height="21dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="415dp"
+            android:layout_marginEnd="306dp"
+            android:layout_marginBottom="295dp"
             android:text="date chosen"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="415dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="75dp"
             android:layout_height="15dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="470dp"
+            android:layout_marginEnd="319dp"
+            android:layout_marginBottom="246dp"
             android:text="Amount"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="470dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/datepick"
             android:layout_width="129dp"
             android:layout_height="47dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="368dp"
+            android:layout_marginEnd="146dp"
+            android:layout_marginBottom="316dp"
             android:text="Choose Date"
-            tools:layout_editor_absoluteX="136dp"
-            tools:layout_editor_absoluteY="368dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editText10"
             android:layout_width="384dp"
             android:layout_height="24dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="486dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="221dp"
+            android:background="?attr/colorButtonNormal"
             android:ems="10"
             android:inputType="numberDecimal"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="486dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/submit"
             android:layout_width="129dp"
             android:layout_height="57dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="527dp"
+            android:layout_marginEnd="146dp"
+            android:layout_marginBottom="147dp"
             android:text="Submit"
-            tools:layout_editor_absoluteX="136dp"
-            tools:layout_editor_absoluteY="527dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
