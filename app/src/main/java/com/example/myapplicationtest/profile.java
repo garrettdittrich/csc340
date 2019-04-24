@@ -1,5 +1,6 @@
 package com.example.myapplicationtest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +15,8 @@ import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
 
 public class profile extends AppCompatActivity {
-    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.43.117:8080/livescore-websocket");
+    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
+   // public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://142.93.63.201:8080/livescore-websocket");
 
     public void sendData(String input){
         EditText editText = (EditText) findViewById(R.id.editText);
@@ -30,11 +32,24 @@ public class profile extends AppCompatActivity {
         //subscribe();
         //sendData("ggggggggggggggggggggg");
 
-        Button sendbutton = (Button) findViewById(R.id.sendbutton);
-        sendbutton.setOnClickListener(new View.OnClickListener() {
+
+        Button buttonRequest = (Button) findViewById(R.id.button3);
+        buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendData("button hit");
+                Intent intent = new Intent(profile.this, Requests.class);
+                Log.d("TT", "HIT REEQUST BUTTON");
+                startActivity(intent);
+            }
+        });
+
+        Button buttonSearch = (Button) findViewById(R.id.button2);
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, search.class);
+                Log.d("TT", "yeeeet");
+                startActivity(intent);
             }
         });
     }

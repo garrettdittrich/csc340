@@ -2,6 +2,8 @@ package com.example.myapplicationtest;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.util.Log;
 
 import com.example.myapplicationtest.socket.StompedClientAddHeaders;
@@ -9,8 +11,11 @@ import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
 
 public class ContractIntentService extends IntentService {
-    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.43.117:8080/livescore-websocket");
+
+    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
+    //public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://142.93.63.201:8080/livescore-websocket");
     public int counter;
+
     private static final String TAG = "com.example.myapplicationtest";
     public ContractIntentService(){
         super("ContractIntentService");
@@ -32,17 +37,13 @@ public class ContractIntentService extends IntentService {
         client.subscribe("/topic/user", new StompedListener() {
             @Override
             public void onNotify(final StompedFrame frame) {
-                counter++;
                 Log.d("ContractIntentService", "RECEIVED NOTIFY INSIDE INTENT SERVICE");
                 goToRequestScreen();
             }
         });
 
+    }
 
-    }
-    public int getCounter(){
-        return this.counter;
-    }
     @Override
     protected void onHandleIntent(Intent intent){
         subscribe();

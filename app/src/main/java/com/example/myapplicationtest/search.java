@@ -10,12 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class Requests extends AppCompatActivity {
+public class search extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_requests);
+        setContentView(R.layout.activity_search);
         //subscribe();
         //sendData("ggggggggggggggggggggg");
 
@@ -23,28 +23,18 @@ public class Requests extends AppCompatActivity {
         sendbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Requests.this, profile.class);
+                Intent intent = new Intent(search.this, profile.class);
                 startActivity(intent);
                 Log.d("TT", "OKKKKKKAYYYY");
             }
         });
 
-
-        Button buttonSearch = (Button) findViewById(R.id.button2);
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
+        Button buttonRequest = (Button) findViewById(R.id.button3);
+        buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Requests.this, search.class);
-                Log.d("TT", "yeeeet");
-                startActivity(intent);
-            }
-        });
-        Button buttonproposal = (Button) findViewById(R.id.button8);
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Requests.this, proposal.class);
-                Log.d("did you", "read my diagram?");
+                Intent intent = new Intent(search.this, Requests.class);
+                Log.d("TT", "HIT REEQUST BUTTON");
                 startActivity(intent);
             }
         });
