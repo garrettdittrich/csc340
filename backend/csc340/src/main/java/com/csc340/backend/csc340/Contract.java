@@ -1,4 +1,4 @@
-package com.example.myapplicationtest;
+package com.csc340.backend.csc340;
 
 import java.util.Calendar;
 
@@ -88,3 +88,4 @@ public class Contract {
         this.potentialPartner = potentialPartner;
     }
 }
+

@@ -14,7 +14,7 @@ import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
 
 public class profile extends AppCompatActivity {
-    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.43.117:8080/livescore-websocket");
+    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
 
     public void sendData(String input){
         EditText editText = (EditText) findViewById(R.id.editText);
