@@ -13,4 +13,11 @@ public class UserController {
 		System.out.println("Someone hit the /topic/user endpoint");
 		return user;
 	}
+	
+	@MessageMapping("/incoming")
+	@SendTo("/topic/incoming")
+	public Contract incomingProposals(Contract contract) {
+		System.out.println("Someone hit the /topic/incoming endpoint" + contract.getPaymentAmount());
+		return contract;
+	}
 }

@@ -1,5 +1,6 @@
 package com.example.myapplicationtest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,9 +15,13 @@ import com.stomped.stomped.component.StompedFrame;
 import com.stomped.stomped.listener.StompedListener;
 
 public class profile extends AppCompatActivity {
+<<<<<<< HEAD
     public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://192.168.1.10:8080/livescore-websocket");
-    public void subscribe(){
+=======
+    public final StompedClientAddHeaders client = new StompedClientAddHeaders.StompedClientBuilder().build("http://142.93.63.201:8080/livescore-websocket");
+>>>>>>> 96569b412c5bf3244c77c0da6c96388e0eb9c069
 
+<<<<<<< HEAD
         client.subscribe("/topic/user", new StompedListener() {
             EditText editText = (EditText) findViewById(R.id.editText);
             TextView textView = (TextView) findViewById(R.id.testdata);
@@ -34,25 +39,40 @@ public class profile extends AppCompatActivity {
 
 
     }
+=======
+>>>>>>> master
     public void sendData(String input){
         EditText editText = (EditText) findViewById(R.id.editText);
         TextView textView = (TextView) findViewById(R.id.testdata);
-        client.sendWithHeaders("/app/user", "{\"username\":\"" + input + "\" , "
-                + "\"password\": \"abc123\", " +
+        client.sendWithHeaders("/app/user", "{\"username\":\"" + "dingdong" + "\" , "
+                + "\"password\": \"whosthere\", " +
                 "\"gps\": 100 }");
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        subscribe();
-        sendData("ggggggggggggggggggggg");
+        //subscribe();
+        //sendData("ggggggggggggggggggggg");
 
-        Button sendbutton = (Button) findViewById(R.id.sendbutton);
-        sendbutton.setOnClickListener(new View.OnClickListener() {
+
+        Button buttonRequest = (Button) findViewById(R.id.button3);
+        buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendData("button hit");
+                Intent intent = new Intent(profile.this, Requests.class);
+                Log.d("TT", "HIT REEQUST BUTTON");
+                startActivity(intent);
+            }
+        });
+
+        Button buttonSearch = (Button) findViewById(R.id.button2);
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, search.class);
+                Log.d("TT", "yeeeet");
+                startActivity(intent);
             }
         });
     }

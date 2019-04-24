@@ -3,15 +3,37 @@
     package="com.example.myapplicationtest">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+        android:name=".FitBetApplicationClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".MainPage"></activity>
+=======
+        <activity
+            android:name=".search"
+            android:label="@string/title_activity_search"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".proposal"
+            android:label="@string/title_activity_proposal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Requests"
+            android:label="@string/title_activity_requests"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Profle_page"
+            android:label="@string/title_activity_profle_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+>>>>>>> master
         <activity android:name=".profile" />
         <activity
             android:name=".LoginPage"
@@ -23,6 +45,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".ContractIntentService" />
+        <service android:name=".GpsService" />
     </application>
 
 </manifest>

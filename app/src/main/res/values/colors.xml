@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
     <color name="colorPrimary">#0314F9</color>
     <color name="colorPrimaryDark">#FCEF60</color>
     <color name="colorAccent">#A8A8FC</color>
+=======
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#A8A8FC</color>
+
+    <color name="dimBackgroundColor">#40000000</color>
+    <color name="brightBackgroundColor">#ffffffff</color>
+    <color name="colorRowSeparator">#cccccccc</color>
+    <color name="filterBackground">#cccccccc</color>
+    <color name="filterText">#3366cc</color>
+>>>>>>> master
 </resources>
