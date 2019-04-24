@@ -100,9 +100,15 @@
             android:id="@+id/button8"
             android:layout_width="346dp"
             android:layout_height="47dp"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="295dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="389dp"
             android:text="Make Contract proposal"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="295dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

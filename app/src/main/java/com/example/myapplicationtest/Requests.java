@@ -39,12 +39,14 @@ public class Requests extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button buttonproposal = (Button) findViewById(R.id.button8);
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
+
+
+        Button buttonProposal = (Button) findViewById(R.id.button8);
+        buttonProposal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Requests.this, proposal.class);
-                Log.d("did you", "read my diagram?");
+                Log.d("didyou", "readmydiagram?");
                 startActivity(intent);
             }
         });
