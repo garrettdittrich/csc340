@@ -4,6 +4,15 @@ public class GpsUser {
     private GpsLat latitude;
     private GpsLong longitude;
 
+    public GpsUser(GpsLat latitude, GpsLong longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+    public GpsUser(Double latitude, Double longitude) {
+        this.latitude = new GpsLat(latitude);
+        this.longitude = new GpsLong(longitude);
+    }
+
     public GpsLat getLattitude() {
         return latitude;
     }

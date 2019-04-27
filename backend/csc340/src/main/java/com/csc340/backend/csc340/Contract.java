@@ -14,6 +14,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.csc340.backend.csc340.models.Profile;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -33,11 +34,11 @@ public class Contract {
     public String gym;
     public String winner;
     public String loser;
-    public String proposer;
+    public Profile proposer;
     public String potentialPartner;
 
     public Contract(){
-
+    	this.activeStatus = false;
     }
     public Calendar getScheduleDate() {
         return scheduleDate;
