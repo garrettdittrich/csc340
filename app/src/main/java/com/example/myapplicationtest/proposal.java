@@ -48,9 +48,6 @@ public class proposal extends AppCompatActivity implements DatePickerDialog.OnDa
                 contract.setPaymentAmount(Double.valueOf(amount.getText().toString()));
                 contract.setActiveStatus(false);
                 app.getContractList().put("1", contract);
-                client.sendWithHeaders("/app/incoming", "{\"username\":\"" + "dingdong" + "\" , "
-                        + "\"password\": \"whosthere\", " +
-                        "\"gps\": 100 }");
             }
         });
         button.setOnClickListener(new View.OnClickListener() {
