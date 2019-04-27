@@ -111,7 +111,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        Button sign_up_button = (Button) findViewById(R.id.createAbutton);
+        sign_up_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, sign_up.class);
+                Log.d("my", "rule");
+                startActivity(intent);
+            }
+        });
 
     }
 

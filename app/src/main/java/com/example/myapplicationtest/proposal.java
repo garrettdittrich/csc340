@@ -32,7 +32,7 @@ public class proposal extends AppCompatActivity implements DatePickerDialog.OnDa
         Intent intent = new Intent(proposal.this, ContractIntentService.class);
         app = (FitBetApplicationClass) getApplication();
         Button button = (Button) findViewById(R.id.datepick);
-        EditText userid = (EditText) findViewById(R.id.userid);
+        EditText username = (EditText) findViewById(R.id.username);
         EditText location = (EditText) findViewById(R.id.location);
         EditText time = (EditText) findViewById(R.id.time);
         EditText amount = (EditText) findViewById(R.id.amount);
@@ -42,7 +42,7 @@ public class proposal extends AppCompatActivity implements DatePickerDialog.OnDa
             public void onClick(View v) {
                 Log.d("CALLLL", String.valueOf(cal.get(Calendar.YEAR)));
                 contract.setScheduleDate(cal);
-                contract.setProposer(userid.getText().toString());
+                contract.setProposer(username.getText().toString());
                 contract.setGym(location.getText().toString());
                 contract.setScheduleTime(time.getText().toString());
                 contract.setPaymentAmount(Double.valueOf(amount.getText().toString()));

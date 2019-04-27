@@ -5,4 +5,5 @@
     <string name="title_activity_requests">Requests</string>
     <string name="title_activity_proposal">proposal</string>
     <string name="title_activity_search">search</string>
+    <string name="title_activity_sign_up">sign_up</string>
 </resources>
